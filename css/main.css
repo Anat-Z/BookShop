@@ -1,0 +1,29 @@
+
+@import url(../lib/bs4/css/bootstrap.min.css);
+
+h1 {
+    color: var(--blue);
+    /* color: var(--danger); */
+}
+
+table {
+    padding: 40px;
+}
+
+.flex-row {
+    display: flex;
+}
+
+.flex-row button {
+    margin-left: 10px;
+}
+
+.add-new-book {
+    background-color: teal;
+    border-radius: 5px;
+    padding: 18px 0 8px 8px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+

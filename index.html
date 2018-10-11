@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="lib/bs4/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="css/main.css">
+    <title>My Book Shop</title>
+</head>
+
+<body>
+    <div class="jumbotron">
+        <h1 class="display-4">Hello!</h1>
+        <p class="lead">This Week Only! 50% Off on all novels.
+        </p>
+        
+    </div>
+
+    <div class="container book-shelf"> 
+    </div>
+
+    <button class="btn btn-info" onclick=$('.add-new-book').show()> Add A New Book </button>
+    <section class="add-new-book" style="display: none"> 
+        <input type="text" id="bookname" placeholder="Book Name" >
+        <input type="text" id="img" placeholder="Image path - relative" >
+        <input type="text" id="price" placeholder="Price" >
+        <button class="submit btn btn-info" onclick="readAndAddNewBook()">Submit new book</button>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="lib/bs4/js/bootstrap.bundle.min.js"></script>
+    <script src="js/js.book-service.js"></script>
+</body>
+
+</html>
+
+
+      
+      <!-- Modal -->
+      <div class="modal fade" id="bookModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+           
+          </div>
