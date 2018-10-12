@@ -4,20 +4,52 @@ var gBooks = [{
     imglocation: 'img/tali.jpg',
     id: 1,
     name: 'אני וטלי בארץ הלמה',
-    price: '65'
+    price: '65',
+    author: 'אברהם שלונסקי',
+    rating: 0
 },
 {
     imglocation: 'img/hundred.jpg',
     id: 2,
     name: 'מאה שנים של בדידות',
-    price: '98'
+    price: '98',
+    author: 'גבריאל גרסיה מארקס',
+    rating: 0
 },
 {
-    imglocation: 'img/tirat.jpg',
+    imglocation: 'http://www.booknet.co.il/imgs/site/prod/2000529345b.jpg',
     id: 3,
     name: 'טירת הזכוכית',
-    price: '72'
-}]
+    price: '72',
+    author: 'גאנט וולס',
+    rating: 0
+},
+{
+    imglocation: 'https://images-eu.ssl-images-amazon.com/images/I/519sxUosPtL._AC_US500_QL65_.jpg',
+    id: 4,
+    name: 'Atlas Shrugged',
+    price: '102',
+    author: 'Ayn Rand',
+    rating: 0
+},
+{
+    imglocation: 'https://images-eu.ssl-images-amazon.com/images/I/51zuRdRQM0L._AC_US500_FMwebp_QL65_.jpg',
+    id: 5,
+    name: 'The Little Prince',
+price: '87',
+    author: 'Antoine De Saint-Exupery',
+    rating: 0
+},
+{
+    imglocation: 'https://images-na.ssl-images-amazon.com/images/I/41Af8ftWGzL._SX331_BO1,204,203,200_.jpg',
+    id: 6,
+    name: 'The Picture of Dorian Gray',
+    price: '58',
+    author: 'Oscar Wilde',
+    rating: 0
+}
+
+]
 
 $(document).ready(renderBooks())
 
@@ -38,7 +70,7 @@ function renderBooks() {
 
     gBooks.forEach(function (book) {
         strHtml += `<tr>
-        <td> <img src="${book.imglocation}" alt="Book cover" class="img-fluid"> </td>
+        <td> <img src="${book.imglocation}" alt="Book cover" class="img-responsive tableimg align-self-center"> </td>
       <th scope="row">${book.id}'</th>
       <td>'${book.name}'</td>
       <td>'${book.price}'₪ </td>
@@ -46,7 +78,7 @@ function renderBooks() {
       <button type="button" class="btn btn-primary" id="read-book" data-toggle="modal" data-target="#exampleModal" onclick="renderModal(${book.id})">
       Read
     </button>
-      <button class="btn btn-warning" id="update-book" onclick="readAndUpdateBook (${book.id})"> Update </button>
+      <button class="btn btn-warning" id="update-book" onclick="readAndUpdateBook(${book.id})"> Update </button>
       <button onclick="deleteBook(${book.id})" class="btn btn-danger" id="delete-book"> Delete </button>
       </td>
     </tr>` ;
@@ -85,9 +117,9 @@ function readNewBook() {
 }
 
 function readAndUpdateBook(bookId) {
-    
+
     var newprice = prompt('What is the updated price for this book?');
-     var idx = getBookIdxByID (bookId);
+    var idx = getBookIdxByID(bookId);
     gBooks[idx].price = newprice;
     renderBooks();
 }
@@ -99,33 +131,10 @@ function getBookIdxByID(bookId) {
     return bookIdx
 }
 
-function renderModal (bookId) {
 
-   var idx = getBookIdxByID (bookId); 
-console.log (idx)
-
-    var strHtml = `     
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">עוד פרטים על "${gBooks[idx].name}"</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-            <img src="${gBooks[idx].imglocation}" alt="Book cover" class="img-fluid">
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-          </div>
-        </div>
-      `;
-      
-   $('.bookModal').html(strHtml);
-
-   var bookm = $('.bookModal')
-   console.log (bookm)
-}
+/* TODO: make jumbotron slimmer.
+make add book transition softly
+add paging
+give add book content validation
+save rating to local storage?
+*/

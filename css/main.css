@@ -26,4 +26,33 @@ table {
     justify-content: space-evenly;
 }
 
+.jumbotron {
+    max-height: 180px;
+}
+
+.modal-body {
+    display: block;
+    justify-content: space-around;
+    max-width: fit-content;
+}
+
+a#whitea {
+    color:white;
+}
+
+.tableimg {
+    max-width: 200px;
+    max-height: 200px;
+}
+
+.rating {
+    padding: 10px;
+    border-radius: 3px;
+    border: 1px solid black;
+    margin: 0 5px;
+}
+
+#plusbtn, #minusbtn {
+    margin: 0;
+}
 

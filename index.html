@@ -3,8 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <link rel="stylesheet" href="lib/bs4/css/bootstrap.min.css"> -->
     <link rel="stylesheet" href="css/main.css">
     <title>My Book Shop</title>
@@ -15,30 +15,55 @@
         <h1 class="display-4">Hello!</h1>
         <p class="lead">This Week Only! 50% Off on all novels.
         </p>
-        
     </div>
 
-    <div class="container book-shelf"> 
+    <div class="container book-shelf">
     </div>
 
-    <button class="btn btn-info" onclick=$('.add-new-book').show()> Add A New Book </button>
-    <section class="add-new-book" style="display: none"> 
-        <input type="text" id="bookname" placeholder="Book Name" >
-        <input type="text" id="img" placeholder="Image path - relative" >
-        <input type="text" id="price" placeholder="Price" >
+    <section class="paging"> <span class="prev-page"></span> <span class="next-page"></span></section>
+
+    <button class="btn btn-info" onclick=$( '.add-new-book').show()> <a href="#add-book" id="whitea"> Add A New Book</a>
+        </button>
+    <section class="add-new-book" id="add-book" style="display: none">
+        <input type="text" id="bookname" placeholder="Book Name">
+        <input type="text" id="img" placeholder="Image path - relative">
+        <input type="text" id="price" placeholder="Price">
         <button class="submit btn btn-info" onclick="readAndAddNewBook()">Submit new book</button>
     </section>
 
+    <!-- Modal -->
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content d-flex">
+                <div class="modal-header w-100">
+                    <h5 class="modal-title" id="exampleModalLabel">More Book Details</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body d-flex flex-column justify-content-center align-self-center">
+                    <span class="authordet align-self-center"></span> <br>
+
+                    <img class="img-responsive align-self-center" id="bookimage" src="" alt="Book cover">
+
+                </div>
+                <div class="ratings-bar flex-row center align-self-center">
+                   <!-- filler button to render from js with bookid -->
+                    <button></button> 
+                </div> 
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="lib/bs4/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
     <script src="js/js.book-service.js"></script>
 </body>
 
 </html>
-
-
-      
-      <!-- Modal -->
-      <div class="modal fade" id="bookModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-           
-          </div>
